@@ -17,34 +17,73 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="main.js" type="text/javascript"></script>
+  <script type="text/javascript" src="./scripts/main.js" ></script>
 </head>
 <body>
   <header class="header">
     <div class="logo">
       <img src="./images/logo.svg" alt="Logo">
     </div>
-    <nav class="nav">
-      <ul class="nav-options">
-        <li>Features <img src="./images/icon-arrow-down.svg" alt="Arrow_down"> </li>
-        <li>Company <img src="./images/icon-arrow-down.svg" alt="Arrow_down"></li>
-        <li>Careers</li>
-        <li>About</li>
-      </ul>
-    </nav>
-    <div class="options">
-      <button>
-        <a href="#">Login</a>
-      </button>
-      <button>
-        <a href="#">Register</a>
-      </button>
+    <div class="header-fields">
+      <nav class="nav">
+        <ul class="nav-options">
+          <li>
+            Features <div class="arrow-down"></div>
+            <ul class="menu-vertical vertical-one">
+              <div class="space"></div>
+              <div class="vertical-li">
+                <li>
+                  <img src="./images/icon-todo.svg" alt="Todo list"/>
+                  <a href="#">Todo List</a>
+                </li>
+                <li>
+                  <img src="./images/icon-calendar.svg" alt="Todo list"/>
+                  <a href="#">Calendar</a>
+                </li>
+                <li>
+                  <img src="./images/icon-reminders.svg" alt="Todo list"/>
+                  <a href="#">Reminders</a>
+                </li>
+                <li>
+                  <img src="./images/icon-planning.svg" alt="Todo list"/>
+                  <a href="#">Planning</a>
+                </li>
+              </div>
+            </ul>
+          </li>
+          <li>
+              Company <div class="arrow-down"></div>
+              <ul class="menu-vertical vertical-two">
+                <div class="space"></div>
+                <div class="vertical-li">
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Blog</a></li>
+                </div>
+              </ul>
+          </li>
+          <li>Careers</li>
+          <li>About</li>
+        </ul>
+      </nav>
+      <div class="options">
+        <button>
+          <a href="#">Login</a>
+        </button>
+        <button>
+          <a href="#">Register</a>
+        </button>
+      </div>
     </div>
+    <div class="menu-responsive">
+      <span id="show-menu"></span>
+    </div>
+    <div class="background-grey"></div>
   </header>
 
   <div class="main">
     <section class="section-one">
-      <h2>Make <br>remote work</h2>
+      <h2>Make <span>remote work</span></h2>
       <p>Get your team in sync, no matter your location. <br>
         Streamline processes, create team rituals, and <br>
         watch productivity soar.</p>

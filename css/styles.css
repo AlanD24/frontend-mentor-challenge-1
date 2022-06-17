@@ -1,60 +1,209 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden; }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
   padding: 10px; }
   .header .logo {
-    width: 40px;
+    width: 6%;
     height: auto;
-    margin-right: 50px; }
-  .header .nav {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 80%; }
-    .header .nav .nav-options {
-      list-style: none;
-      display: flex;
-      padding: 0 40px;
-      font-weight: 700; }
-      .header .nav .nav-options li {
-        margin: 0 20px;
-        font-family: "Epilogue", sans-serif;
-        display: flex;
-        align-items: center;
-        color: dimgray; }
-        .header .nav .nav-options li img {
-          margin-left: 5px; }
-        .header .nav .nav-options li:hover {
-          color: #141414;
-          cursor: pointer; }
-  .header .options {
     display: flex;
     justify-content: center;
-    align-items: center; }
-    .header .options button {
-      background: white;
-      border: 1px solid dimgray;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 10px; }
-      .header .options button:nth-child(1) {
-        border: none; }
-      .header .options button:nth-child(2):hover {
-        background: dimgray;
-        transition: all 500ms; }
-        .header .options button:nth-child(2):hover a {
-          color: white; }
-      .header .options button a {
-        text-decoration: none;
-        color: dimgray; }
+    align-items: center;
+    margin-left: 10px; }
+  .header .header-fields {
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px; }
+    .header .header-fields .nav {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 80%; }
+      .header .header-fields .nav .nav-options {
+        list-style: none;
+        display: flex;
+        font-weight: 700;
+        padding: 0; }
+        .header .header-fields .nav .nav-options li {
+          margin: 0 20px;
+          font-family: "Epilogue", sans-serif;
+          display: flex;
+          align-items: center;
+          color: dimgray; }
+          .header .header-fields .nav .nav-options li .arrow-down {
+            background-image: url("../images/icon-arrow-down.svg");
+            width: 10px;
+            height: 6px;
+            margin-left: 5px;
+            transition: all 500ms; }
+          .header .header-fields .nav .nav-options li .menu-vertical {
+            position: fixed;
+            list-style: none;
+            min-width: 110px;
+            height: 180px;
+            top: 20px;
+            display: none;
+            padding: 0 !important; }
+            .header .header-fields .nav .nav-options li .menu-vertical .vertical-li {
+              background: white;
+              box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+              border-radius: 10px; }
+              .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li {
+                margin: 0 !important;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 5px 0;
+                padding-left: 20px; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li a {
+                  text-decoration: none;
+                  color: dimgray;
+                  font-size: 15px; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li:first-child {
+                  padding-top: 15px;
+                  border-radius: 10px 10px 0 0; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li:last-child {
+                  padding-bottom: 15px;
+                  border-radius: 0 0 10px 10px; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li img {
+                  margin-right: 10px; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li:hover {
+                  background: rgba(0, 0, 0, 0.2); }
+                  .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li:hover a {
+                    color: black; }
+            .header .header-fields .nav .nav-options li .menu-vertical .space {
+              width: 100%;
+              height: 40px;
+              background: transparent; }
+          .header .header-fields .nav .nav-options li .vertical-one {
+            left: 100px;
+            width: 150px; }
+          .header .header-fields .nav .nav-options li .vertical-two {
+            left: 290px; }
+          .header .header-fields .nav .nav-options li:hover {
+            color: #141414;
+            cursor: pointer; }
+            .header .header-fields .nav .nav-options li:hover .arrow-down {
+              background-image: url("../images/icon-arrow-up.svg"); }
+            .header .header-fields .nav .nav-options li:hover .menu-vertical {
+              display: block; }
+    .header .header-fields .options {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .header .header-fields .options button {
+        background: white;
+        border: 1px solid dimgray;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 10px; }
+        .header .header-fields .options button:nth-child(1) {
+          border: none; }
+        .header .header-fields .options button:nth-child(2):hover {
+          background: dimgray;
+          transition: all 500ms; }
+          .header .header-fields .options button:nth-child(2):hover a {
+            color: white; }
+        .header .header-fields .options button a {
+          text-decoration: none;
+          color: dimgray; }
+  .header .menu-responsive,
+  .header #btnResponsive {
+    display: none; }
+  @media screen and (max-width: 1000px) {
+    .header {
+      padding: 20px; }
+      .header .logo {
+        width: 60px; }
+      .header .header-fields {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        background: white;
+        height: 100%;
+        z-index: 10;
+        transition: all 500ms;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start; }
+        .header .header-fields .nav {
+          width: 100%;
+          height: 40%;
+          flex-direction: column;
+          padding-bottom: 50px; }
+          .header .header-fields .nav .nav-options {
+            width: 100%;
+            flex-direction: column;
+            padding-top: 40px; }
+            .header .header-fields .nav .nav-options li {
+              padding-bottom: 20px;
+              font-size: 18px;
+              flex-wrap: wrap; }
+              .header .header-fields .nav .nav-options li .arrow-down {
+                margin-left: 15px; }
+              .header .header-fields .nav .nav-options li .menu-vertical {
+                position: unset;
+                width: 100%;
+                height: auto; }
+                .header .header-fields .nav .nav-options li .menu-vertical .space {
+                  height: 0; }
+                .header .header-fields .nav .nav-options li .menu-vertical .vertical-li {
+                  box-shadow: 0 0 0;
+                  border-radius: 0; }
+                  .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li img {
+                    margin-right: 20px; }
+                  .header .header-fields .nav .nav-options li .menu-vertical .vertical-li li a {
+                    font-size: 16px; }
+        .header .header-fields .options {
+          width: 100%;
+          flex-direction: column; }
+          .header .header-fields .options button {
+            width: 80%;
+            margin: 4px 0;
+            transition: all 500ms; }
+            .header .header-fields .options button a {
+              font-size: 16px; }
+            .header .header-fields .options button:hover:first-child {
+              background: black; }
+              .header .header-fields .options button:hover:first-child a {
+                color: white; }
+      .header .menu-responsive {
+        display: block; }
+        .header .menu-responsive span {
+          background-image: url("../images/icon-menu.svg");
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 32px;
+          height: 18px;
+          z-index: 100;
+          transition: all 500ms; }
+          .header .menu-responsive span:hover {
+            cursor: pointer; }
+      .header .background-grey {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 5;
+        display: none; } }
 
 .main {
   display: flex;
   justify-self: space-around;
   align-items: center;
-  height: auto;
-  padding: 0 40px; }
+  height: auto; }
   .main .section-one {
     width: 55%;
     display: flex;
@@ -108,9 +257,42 @@
     height: 80vh;
     background-size: contain;
     background-repeat: no-repeat; }
+  @media screen and (max-width: 1000px) {
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      padding: 0; }
+      .main .section-two {
+        width: 100%;
+        background-image: url("./../images/image-hero-mobile.png");
+        height: 400px !important; }
+      .main .section-one {
+        width: 100%;
+        padding: 0; }
+        .main .section-one h2 {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          font-size: 30px;
+          text-align: center;
+          font-weight: bold; }
+          .main .section-one h2 span {
+            margin-left: 5px; }
+        .main .section-one p {
+          width: 100%;
+          padding: 0;
+          text-align: center; }
+        .main .section-one .button-container {
+          display: flex;
+          justify-content: center; }
+      .main .section-one-footer {
+        width: 100%;
+        height: 90px;
+        margin-top: 40px !important; } }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
