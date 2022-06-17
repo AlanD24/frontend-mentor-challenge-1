@@ -19,4 +19,30 @@ window.addEventListener('load', () => {
             menu.style.backgroundImage = 'url("./images/icon-menu.svg")';
         }
     });
+
+    let boolean = false;
+
+    const showMenuOne = document.querySelector('#li-show-menu-one');
+    showMenuOne.addEventListener('click', () => {
+        let menuVertical = document.querySelector('.vertical-one');
+        boolean = !boolean;
+
+        if(boolean === true) {
+            menuVertical.style.display = 'block';
+        } else {
+            menuVertical.style.display = 'none';
+        }
+    });
+
+    const showMenuTwo = document.querySelector('#li-show-menu-two');
+    showMenuTwo.addEventListener('click', () => {
+        let menuVertical = document.querySelector('.vertical-two');
+        boolean = !boolean;
+
+        if(boolean === true) {
+            menuVertical.style.display = 'block';
+        } else {
+            menuVertical.style.display = 'none';
+        }
+    });
 });
