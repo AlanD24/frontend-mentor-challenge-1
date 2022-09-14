@@ -1,7 +1,10 @@
 body {
   margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden; }
+  padding: 0 !important; }
+
+html, body {
+  overflow: hidden;
+  position: relative; }
 
 .header {
   display: flex;
